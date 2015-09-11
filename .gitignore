@@ -4,3 +4,8 @@
 target
 .idea
 
+/bin/
+
+.classpath
+.settings
+
