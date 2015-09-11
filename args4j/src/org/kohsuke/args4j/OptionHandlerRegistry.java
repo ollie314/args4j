@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
+
 import org.kohsuke.args4j.spi.BooleanOptionHandler;
 import org.kohsuke.args4j.spi.ByteOptionHandler;
 import org.kohsuke.args4j.spi.CharOptionHandler;
@@ -40,6 +41,7 @@ import static org.kohsuke.args4j.Utilities.checkNonNull;
  * retrieved with the {@link #getRegistry()} call.
  * @author Stephan Fuhrmann
  */
+@SuppressWarnings("rawtypes")
 public class OptionHandlerRegistry {
 
     /**

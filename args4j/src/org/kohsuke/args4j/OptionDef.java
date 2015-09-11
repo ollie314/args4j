@@ -8,6 +8,7 @@ import org.kohsuke.args4j.spi.OptionHandler;
  * 
  * @author Mark Sinke
  */
+@SuppressWarnings("rawtypes")
 public class OptionDef {
 	private final String usage;
 	private final String metaVar;

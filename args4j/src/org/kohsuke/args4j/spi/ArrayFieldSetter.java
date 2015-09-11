@@ -20,6 +20,7 @@ import java.util.List;
  *
  * @author Kohsuke Kawaguchi
  */
+@SuppressWarnings("rawtypes")
 final class ArrayFieldSetter implements Getter, Setter {
     private final Object bean;
     private final Field f;

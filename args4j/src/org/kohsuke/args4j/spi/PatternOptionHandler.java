@@ -8,6 +8,7 @@ package org.kohsuke.args4j.spi;
 
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
+
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.OptionDef;
@@ -22,6 +23,7 @@ public class PatternOptionHandler extends OptionHandler<Pattern> {
         super(parser, option, setter);
     }
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public int parseArguments(Parameters params) throws CmdLineException {
 		String s = params.getParameter(0);

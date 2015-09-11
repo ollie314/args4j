@@ -10,6 +10,7 @@ import java.util.List;
  *
  * @author Kohsuke Kawaguchi
  */
+@SuppressWarnings("rawtypes")
 public final class FieldSetter implements Getter, Setter {
     private final Field f;
     private final Object bean;

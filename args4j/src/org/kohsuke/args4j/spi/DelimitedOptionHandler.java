@@ -55,8 +55,10 @@ public abstract class DelimitedOptionHandler<T> extends OptionHandler<T> {
      */
     public String printDefaultValue() {
         if (setter instanceof Getter) {
-            Getter getter = (Getter)setter;
-            List<T> defaultValues = getter.getValueList();
+            @SuppressWarnings("rawtypes")
+			Getter getter = (Getter)setter;
+            @SuppressWarnings("unchecked")
+			List<T> defaultValues = getter.getValueList();
 
             StringBuilder buf = new StringBuilder();
             for (T v : defaultValues) {

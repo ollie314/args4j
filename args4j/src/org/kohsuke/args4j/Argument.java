@@ -22,6 +22,7 @@ import static java.lang.annotation.ElementType.PARAMETER;
  * @author Kohsuke Kawaguchi
  * @author Mark Sinke
  */
+@SuppressWarnings("rawtypes")
 @Retention(RUNTIME)
 @Target({FIELD,METHOD,PARAMETER})
 public @interface Argument {

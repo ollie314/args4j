@@ -8,6 +8,7 @@ import java.util.Arrays;
  * Base class for the @Option and @Argument implementation classes.
  * @author Jan Materne
  */
+@SuppressWarnings("rawtypes")
 public abstract class AnnotationImpl implements Annotation {
     private final Class<? extends Annotation> annotationType;
 
@@ -15,7 +16,8 @@ public abstract class AnnotationImpl implements Annotation {
         this.annotationType = annotationType;
     }
 
-    protected AnnotationImpl(Class<? extends Annotation> annotationType, ConfigElement ce) throws ClassNotFoundException {
+    @SuppressWarnings("unchecked")
+	protected AnnotationImpl(Class<? extends Annotation> annotationType, ConfigElement ce) throws ClassNotFoundException {
         this(annotationType);
 
 		aliases = ce.aliases != null ? ce.aliases : new String[0];

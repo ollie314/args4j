@@ -13,6 +13,7 @@ import java.lang.reflect.Method;
  *
  * @author Jan Materne
  */
+@SuppressWarnings("rawtypes")
 public class ClassParser {
     public void parse(Object bean, CmdLineParser parser) {
         // recursively process all the methods/fields.

@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
  *  
  * @author Jan Materne
  */
+@SuppressWarnings("rawtypes")
 public class Starter {
 	
 	/**
@@ -21,6 +22,7 @@ public class Starter {
 	 */
 	public static final String PARAMETER_NAME = "mainclass";
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		String classname = System.getProperty(PARAMETER_NAME);
 		CmdLineParser parser = null;
@@ -95,6 +97,7 @@ public class Starter {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public static boolean hasAnnotation(Class clazz, Class<? extends Annotation> annotation) {
 		if (clazz.getAnnotation(annotation)!=null) return true;
 		for (Field f : clazz.getFields()) {

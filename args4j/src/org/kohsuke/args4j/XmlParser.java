@@ -75,6 +75,7 @@ public class XmlParser {
 		} else {
 			String methodName = method.substring(0, method.indexOf("("));
 			String[] params = method.substring(method.indexOf("(")+1, method.indexOf(")")).split(",");
+			@SuppressWarnings("rawtypes")
 			Class[] paramTypes = new Class[params.length];
 			for(int i=0; i<params.length; i++) {
 				String className = params[i];

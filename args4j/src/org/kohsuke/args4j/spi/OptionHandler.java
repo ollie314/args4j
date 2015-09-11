@@ -133,7 +133,8 @@ public abstract class OptionHandler<T> {
      *
      * @return null if the current value of the setter isn't available.
      */
-    public String printDefaultValue() {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public String printDefaultValue() {
         if (setter instanceof Getter) {
             Getter getter = (Getter)setter;
             List<T> defaultValues = getter.getValueList();

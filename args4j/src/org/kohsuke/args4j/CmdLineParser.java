@@ -16,8 +16,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Set;
-import org.kohsuke.args4j.spi.Getter;
 
+import org.kohsuke.args4j.spi.Getter;
 import org.kohsuke.args4j.spi.OptionHandler;
 import org.kohsuke.args4j.spi.Parameters;
 import org.kohsuke.args4j.spi.Setter;
@@ -33,6 +33,7 @@ import static org.kohsuke.args4j.Utilities.checkNonNull;
  * @author
  *     Kohsuke Kawaguchi (kk@kohsuke.org)
  */
+@SuppressWarnings("rawtypes")
 public class CmdLineParser {
 
     /**
@@ -162,7 +163,7 @@ public class CmdLineParser {
         return options;
     }
 
-	private void checkOptionNotInMap(String name) throws IllegalAnnotationError {
+	private void checkOptionNotInMap(final String name) throws IllegalAnnotationError {
         checkNonNull(name, "name");
         
 		if(findOptionByName(name)!=null) {
@@ -655,7 +656,7 @@ public class CmdLineParser {
 	 * @param name name
 	 * @return the {@code OptionHandler} or {@code null}
 	 */
-	private OptionHandler findOptionByName(String name) {
+	private OptionHandler findOptionByName(final String name) {
 		for (OptionHandler h : options) {
 			NamedOptionDef option = (NamedOptionDef)h.option;
 			if (name.equals(option.name())) {
@@ -675,7 +676,7 @@ public class CmdLineParser {
      * (as opposed to an argument).
      * @throws NullPointerException if {@code arg} is {@code null}.
      */
-    protected boolean isOption(String arg) {
+    protected boolean isOption(final String arg) {
         checkNonNull(arg, "arg");
         
         return parsingOptions && arg.startsWith("-");

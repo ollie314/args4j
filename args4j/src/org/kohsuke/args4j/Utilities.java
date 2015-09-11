@@ -20,9 +20,9 @@ class Utilities {
      * @param name the object name. If {@code obj} is {@code null}, then
      * an exception is constructed from this name.
      */
-    static void checkNonNull(Object obj, String name) {
+    static void checkNonNull(Object obj, final String name) {
         if (obj == null) {
-            throw new NullPointerException(name+" is null");
+            throw new NullPointerException(name + " is null");
         }
     }    
 }

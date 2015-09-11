@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
  * @see CmdLineParser#printExample(OptionHandlerFilter)
  * @see CmdLineParser#printUsage(Writer, ResourceBundle, OptionHandlerFilter)
  */
+@SuppressWarnings("rawtypes")
 public interface OptionHandlerFilter {
     /**
      *

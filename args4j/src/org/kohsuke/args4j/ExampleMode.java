@@ -9,6 +9,7 @@ import org.kohsuke.args4j.spi.OptionHandler;
  *
  * @deprecated use {@link OptionHandlerFilter}
  */
+@SuppressWarnings("rawtypes")
 public enum ExampleMode implements OptionHandlerFilter {
     /**
      * Print all defined options in the example.

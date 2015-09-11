@@ -42,7 +42,7 @@ public class Config {
 		ConfigElement currentCE;
 
 		@Override
-		public void startElement(String uri, String localName, String qName,
+		public void startElement(final String uri, final String localName, final String qName,
 				Attributes attributes) throws SAXException {
 			if (qName.equals("option") || qName.equals("argument")) {
 				currentCE = new ConfigElement();

@@ -66,6 +66,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *
  * @author Kohsuke Kawaguchi
  */
+@SuppressWarnings("rawtypes")
 @Retention(RUNTIME)
 @Target({FIELD,METHOD,PARAMETER})
 public @interface Option {

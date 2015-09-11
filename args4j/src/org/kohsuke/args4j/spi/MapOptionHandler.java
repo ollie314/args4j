@@ -20,6 +20,7 @@ import org.kohsuke.args4j.*;
  * This option handler can be subtyped if you want to convert values to different types
  * or to handle <code>key=value</code> in other formats, like <code>key:=value</code>.
  * */
+@SuppressWarnings("rawtypes")
 public class MapOptionHandler extends OptionHandler<Map<?,?>> {
 
 	public MapOptionHandler(CmdLineParser parser, OptionDef option, Setter<? super Map<?,?>> setter) {
@@ -33,6 +34,7 @@ public class MapOptionHandler extends OptionHandler<Map<?,?>> {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public int parseArguments(Parameters params) throws CmdLineException {
         FieldSetter fs = setter.asFieldSetter();
@@ -88,7 +90,8 @@ public class MapOptionHandler extends OptionHandler<Map<?,?>> {
     /**
      * This is the opportunity to convert values to some typed objects.
      */
-    protected void addToMap(Map m, String key, String value) {
+    @SuppressWarnings("unchecked")
+	protected void addToMap(Map m, String key, String value) {
         m.put(key,value);
     }
 
